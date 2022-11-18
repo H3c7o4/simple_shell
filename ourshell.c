@@ -25,6 +25,7 @@ int main(int argc, char **argv, char **envp)
 	UNUSED(argc);
 	UNUSED(argv);
 
+	write(1, "Watcher$ ", 9);
 	while ((readcount = getline(&line, &len, stdin)) != EOF)
 	{
 		if (line && (_strcmp(line, _exit)) != 0)
@@ -38,6 +39,8 @@ int main(int argc, char **argv, char **envp)
 			}
 			else
 				free(aop);
+
+			write(1, "\nWatcher$ ", 10);
 		}
 		else if ((_strcmp(line, _exit)) == 0)
 		{
@@ -49,6 +52,8 @@ int main(int argc, char **argv, char **envp)
 			perror("Error, unable to allocate buffer\n");
 		}
 	}
+
 	free(line);
 	exit(EXIT_SUCCESS);
+	
 }
