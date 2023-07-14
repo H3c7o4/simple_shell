@@ -25,7 +25,7 @@ int main(int argc, char **argv, char **envp)
 	UNUSED(argc);
 	UNUSED(argv);
 
-	write(1, "Watcher$ ", 9);
+	write(1, "($) ", 5);
 	while ((readcount = getline(&line, &len, stdin)) != EOF)
 	{
 		if (line && (_strcmp(line, _exit)) != 0)
@@ -40,7 +40,7 @@ int main(int argc, char **argv, char **envp)
 			else
 				free(aop);
 
-			write(1, "\nWatcher$ ", 10);
+			write(1, "\n($) ", 6);
 		}
 		else if ((_strcmp(line, _exit)) == 0)
 		{
