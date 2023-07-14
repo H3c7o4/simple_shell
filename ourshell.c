@@ -55,5 +55,4 @@ int main(int argc, char **argv, char **envp)
 
 	free(line);
 	exit(EXIT_SUCCESS);
-	
 }
